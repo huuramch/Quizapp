@@ -4,11 +4,13 @@ const router1 = require('./routes/factRouter.js')
 const cors = require('cors')
 const connect = require("./database/db.js")
 
-app.use(express.json())
-app.use(cors())
 
 const app = express();
 const port = 8080;
+app.use(express.json())
+app.use(cors())
+
+
 connect();
 
 
