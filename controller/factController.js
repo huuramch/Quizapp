@@ -14,7 +14,7 @@ const createFacts = async (req, res) => {
 
 const getFacts = async (req, res) => {
     try{
-        const data = await FactModel.find({})
+        const data = await FactModel.find()
         res.status(200).send(data)
     } catch {
         res.status(500).send("Internal Error")
@@ -66,30 +66,6 @@ const addLikes = async (req, res) => {
         res.status(500).send("Internal Error")
     }
 }
-
-//const addDislikes = async (req, res) => {
-//  const userID = req.params.userID;
-//  const factId = req.params.factId
-// try{
-//   const fact = await FactModel.findById(factId)
-//   const updatedLikes = fact.likes.filter((id) => id !== userID)
-//   const isAlreadyDisliked = fact.dislikes.includes(userID)
-//   const updatedDislikes = isAlreadyDisliked ? fact.dislikes : [...fact.dislikes, userID]
-//   const updatedFact = await FactModel.findByIdAndUpdate (factId, {likes: updatedLikes, dislikes: updatedDislikes}, {new: true})
-//  res.status(200).send(updatedFact)
-// }catch {
-//  res.status(500).send("Internal Error")
-//   }
-// }
-
-// user id avna
-// fact id avna
-// idgaar ni haina
-// likesin filterdene
-// dislike darsan ugug ni include hiine
-// updated dislikes
-// findbyidandupdate
-
 
 const addDislikes = async (req, res) => {
     const userID = req.params.userID
